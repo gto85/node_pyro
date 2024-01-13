@@ -1,8 +1,4 @@
-require("dotenv").config();
-const { Telegraf } = require('telegraf');
-const  bot = new Telegraf(process.env.BOT_TOKEN);
-
-bot.start((ctx) => ctx.reply('Hi man'));
-
-
-bot.launch();
+//COMMANDS
+require("./bot/middleware/command/start.command");
+//CONNECTION
+require('./bot/connections/local.connection');
