@@ -1,7 +1,9 @@
-const { db } = require("../connections/db.connection");
-const { DataTypes } = require("sequelize");
+const db  = require("../connections/db.connection");
+const { DataTypes} = require("sequelize");
 
-module.exports = db.define("user", {
+module.exports = db.define(
+  "user",
+  {
     id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,

@@ -1,5 +1,17 @@
-const { bot } = require('../../connections/token.connection');
 
+const  { bot } = require('../../connections/token.connection');
+const { saveUser } = require('../../common/sequelize/saveUser.sequelize');
 module.exports = bot.start(async (ctx) => {
-    await ctx.reply("Hello and welcome to the local bot!");
+    try {
+        const login = String(ctx.chat.id);
+        const username = ctx.chat.username ?? "anonymous";
+
+        const result = await saveUser(login, username);
+        console.log(result);
+
+        return result;
+
+    }catch (err) {
+        console.log(err);
+    }
 });
