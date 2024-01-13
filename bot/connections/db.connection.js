@@ -11,3 +11,7 @@ module.exports = new Sequelize(
         dialect: process.env.POSTGRES_DIALECT,
     },
 );
+
+
+
+
