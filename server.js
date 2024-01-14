@@ -1,4 +1,4 @@
 //COMMANDS
-require("./bot/middleware/command/start.command");
+require("./bot/main");
 //CONNECTION
 require('./bot/connections/local.connection');
