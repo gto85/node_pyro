@@ -1,8 +1,7 @@
 const { DataTypes, Model } = require('sequelize');
-const { sequelize } = require('../../connections/pg.connection');
+const { sequelize } = require('../connections/db.connection');
 const text = require('../inf/text');
 const menu = require('../middleware/command/menu');
-const random = require('random');
 const date = require('date-and-time');
 
 class User extends Model {}
@@ -93,7 +92,7 @@ async function getProfile(userId, name) {
 }
 
 async function createBuyAccess(userId) {
-  const code = random.int(1111111111, 9999999999);
+  const code = ( 9999999999);
 
   await CheckPayment.create({
     user_id: userId,

@@ -14,8 +14,9 @@ exports.saveUser = async (login, username) => {
         await UserModel.create({ login, username });
         return successMessage;
     }
+
     if(foundUser.username !== username) {
-        await UserModel.update({  username }, {where: { login} });
+        await UserModel.update({username: username}, {where: { login: login} });
 
     }
     return updateMessage;
